@@ -9,6 +9,25 @@ public class ue02_2 {
         Out.println("Please enter month (1-12)");
         int month = In.readInt();
 
+        boolean leapYear = false;
+
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    leapYear = true;
+                } 
+                else {
+                    leapYear = false;
+                } 
+            } 
+            else {
+                leapYear = true;
+            } 
+        } 
+        else  {
+            leapYear = false;
+        }
+
         switch (month) {
             case 1:
             case 3:
@@ -26,12 +45,13 @@ public class ue02_2 {
                 Out.print("days: 30");
                 break;
             case 2: 
-                if (leapYear(year)) {
+                if (!leapYear) {
                     Out.print("days: 29");
+                    break;
                 } else {
                     Out.print("days:28");
+                    break;
                 }
-                break;
             default:
                 break;
         }
