@@ -45,7 +45,7 @@ public class ue02_2 {
                 Out.print("days: 30");
                 break;
             case 2: 
-                if (!leapYear) {
+                if (leapYear) {
                     Out.print("days: 29");
                     break;
                 } else {
